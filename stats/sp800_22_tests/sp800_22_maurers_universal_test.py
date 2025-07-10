@@ -21,7 +21,7 @@
 # along with sp800_22_tests.  If not, see <http://www.gnu.org/licenses/>.
 
 from __future__ import print_function
-
+from .gf2matrix import *
 import math
 
 def pattern2int(pattern):

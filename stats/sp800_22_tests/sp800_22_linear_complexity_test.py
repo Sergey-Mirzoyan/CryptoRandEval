@@ -24,7 +24,8 @@ from __future__ import print_function
 
 import math
 #from scipy.special import gamma, gammainc, gammaincc
-from gamma_functions import *
+from .gamma_functions import *
+from .gf2matrix import *
 
 def berelekamp_massey(bits):
     n = len(bits)

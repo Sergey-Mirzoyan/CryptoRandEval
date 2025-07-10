@@ -24,6 +24,7 @@ from __future__ import print_function
 import math
 import numpy
 import sys
+from .gf2matrix import *
 
 def dft_test(bits):
     n = len(bits)

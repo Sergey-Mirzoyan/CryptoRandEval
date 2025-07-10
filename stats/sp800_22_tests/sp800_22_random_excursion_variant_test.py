@@ -23,6 +23,7 @@
 from __future__ import print_function
 
 import math
+from .gf2matrix import *
 
 # RANDOM EXCURSION VARIANT TEST
 def random_excursion_variant_test(bits):

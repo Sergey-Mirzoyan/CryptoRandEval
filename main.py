@@ -7,7 +7,7 @@ import os
 import sys
 
 # Импортируем внешние модули анализа
-from stats.sp800_22_tests.sp800_22_tests import run_nist_tests,runrun
+from stats.sp800_22_tests.sp800_22_tests import runrun
 from stats.DIEHARD.dieharder import run_dieharder
 
 
@@ -62,7 +62,6 @@ def predictability_analyze(bitstring):
 
 def stats_analyze(bitstring,file):
     """Выполняет полный статистический анализ (NIST + DIEHARD)"""
-    print(bitstring)
     nist_result = runrun(file)
     
     diehard_result = run_dieharder(bitstring)

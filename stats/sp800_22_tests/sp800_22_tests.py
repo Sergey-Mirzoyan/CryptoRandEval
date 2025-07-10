@@ -26,6 +26,9 @@ import argparse
 import sys
 import pickle
 import importlib
+from .gf2matrix import *
+import importlib
+
 
 def read_bits_from_file(filename,bigendian):
     bitlist = list()
@@ -150,32 +153,55 @@ def run_nist_tests(file_path):
     else:
         results = list()
         
+        
         for testname in testlist:
             print("TEST: %s" % testname)
-            module_name = "stats.sp800_22_tests.sp800_22_" + testname
-            m = __import__(module_name, fromlist=[testname])
-            func = getattr(m,testname)
-            
-            (success,p,plist) = func(bits)
+            try:
+                module_name = f"stats.sp800_22_tests.sp800_22_{testname}"
+                m = importlib.import_module(module_name)
+                func = getattr(m, testname)
+                (success, p, plist) = func(bits)
 
-            summary_name = testname
-            if success:
-                print("  PASS")
-                summary_result = "PASS"
-            else:
-                print("  FAIL")
-                summary_result = "FAIL"
+                # Вывод результата
+                print("  PASS" if success else "  FAIL")
+                if p is not None:
+                    print("  P=" + str(p))
+                if plist:
+                    for pval in plist:
+                        print("P=" + str(pval))
+
+                results.append((testname, str(p) if p else "N/A", "PASS" if success else "FAIL"))
+
+            except Exception as e:
+                print(f"  Ошибка выполнения теста {testname}: {e}")
+                results.append((testname, "ERROR", "ERROR"))
+
+        # for testname in testlist:
+        #     print("TEST: %s" % testname)
+        #     module_name = "stats.sp800_22_tests.sp800_22_" + testname
+        #     m = __import__(module_name, fromlist=[testname])
+        #     func = getattr(m,testname)
             
-            if p != None:
-                print("  P="+str(p))
-                summary_p = str(p)
+        #     (success,p,plist) = func(bits)
+
+        #     summary_name = testname
+        #     if success:
+        #         print("  PASS")
+        #         summary_result = "PASS"
+        #     else:
+        #         print("  FAIL")
+        #         summary_result = "FAIL"
+            
+        #     if p != None:
+        #         print("  P="+str(p))
+        #         summary_p = str(p)
                 
-            if plist != None:
-                for pval in plist:
-                    print("P="+str(pval))
-                summary_p = str(min(plist))
+        #     if plist != None:
+        #         for pval in plist:
+        #             print("P="+str(pval))
+        #         summary_p = str(min(plist))
             
-            results.append((summary_name,summary_p, summary_result))
+        #     results.append((summary_name,summary_p, summary_result))
             
         print()
         print("SUMMARY")

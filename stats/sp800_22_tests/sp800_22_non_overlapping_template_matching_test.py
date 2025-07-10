@@ -24,8 +24,9 @@ from __future__ import print_function
 
 import math
 #from scipy.special import gamma, gammainc, gammaincc
-from gamma_functions import *
+from .gamma_functions import *
 import random
+from .gf2matrix import *
 
 def non_overlapping_template_matching_test(bits):
     # The templates provdided in SP800-22rev1a
