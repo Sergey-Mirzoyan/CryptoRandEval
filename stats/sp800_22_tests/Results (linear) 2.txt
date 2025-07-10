@@ -1,0 +1,159 @@
+Tests of Distinguishability from Random
+TEST: monobit_test
+  Ones count   = 1579469
+  Zeroes count = 1579651
+  PASS
+  P=0.9184413601731071
+TEST: frequency_within_block_test
+  n = 3159120
+  N = 99
+  M = 31910
+  PASS
+  P=0.8959986220294816
+TEST: runs_test
+  prop  0.4999711945098635
+  tau  0.0011252445914622777
+  vobs  1579387.0
+  PASS
+  P=0.845658019772205
+TEST: longest_run_ones_in_a_block_test
+  n = 3159120
+  K = 6
+  M = 10000
+  N = 75
+  chi_sq = 3.6196362392886554
+  PASS
+  P=0.7279905400720663
+TEST: dft_test
+  N0 = 1500582.000000
+  N1 = 1500825.000000
+  PASS
+  P=0.2096228286129702
+TEST: non_overlapping_template_matching_test
+  PASS
+  P=1.0108133156312604
+TEST: serial_test
+  psi_sq_m   =  9.89509990112856
+  psi_sq_mm1 =  2.942449796013534
+  psi_sq_mm2 =  0.059305123053491116
+  delta1     =  6.952650105115026
+  delta2     =  4.069505432154983
+  P1         =  0.5417499088928829
+  P2         =  0.3966810299310816
+  PASS
+P=0.5417499088928829
+P=0.3966810299310816
+TEST: approximate_entropy_test
+  n         =  3159120
+  m         =  3
+  Pattern 1 of 8, count = 394625
+  Pattern 2 of 8, count = 395333
+  Pattern 3 of 8, count = 395147
+  Pattern 4 of 8, count = 394546
+  Pattern 5 of 8, count = 395333
+  Pattern 6 of 8, count = 394360
+  Pattern 7 of 8, count = 394546
+  Pattern 8 of 8, count = 395230
+  phi(3)    = -4.382026
+  Pattern 1 of 16, count = 196990
+  Pattern 2 of 16, count = 197635
+  Pattern 3 of 16, count = 198153
+  Pattern 4 of 16, count = 197180
+  Pattern 5 of 16, count = 197850
+  Pattern 6 of 16, count = 197297
+  Pattern 7 of 16, count = 196846
+  Pattern 8 of 16, count = 197700
+  Pattern 9 of 16, count = 197635
+  Pattern 10 of 16, count = 197698
+  Pattern 11 of 16, count = 196994
+  Pattern 12 of 16, count = 197366
+  Pattern 13 of 16, count = 197483
+  Pattern 14 of 16, count = 197063
+  Pattern 15 of 16, count = 197700
+  Pattern 16 of 16, count = 197530
+  phi(3)    = -5.075172
+  AppEn(3)  = 0.693146
+  ChiSquare =  6.952568604349079
+  PASS
+  P=0.5417587314403518
+TEST: cumulative_sums_test
+PASS
+  PASS
+P=0.5388802859334183
+P=0.6294239878659385
+TEST: random_excursion_test
+J=2001
+x = -4  chisq = 5.590344        p = 0.348141
+x = -3  chisq = 6.229790        p = 0.284497
+x = -2  chisq = 4.802373        p = 0.440472
+x = -1  chisq = 8.382058        p = 0.136399
+x = 1   chisq = 4.780807        p = 0.443212
+x = 2   chisq = 11.566143       p = 0.041241
+x = 3   chisq = 15.092659       p = 0.009974  Not Random
+x = 4   chisq = 7.339834        p = 0.196568
+FAIL: Data not random
+  FAIL
+P=0.34814095779641074
+P=0.2844972093147359
+P=0.44047201779355705
+P=0.13639880389043454
+P=0.4432122787325331
+P=0.04124132239022644
+P=0.009973670123096995
+P=0.1965681581456608
+TEST: random_excursion_variant_test
+J= 2001
+x = -9   count=2153     p = 0.560063
+x = -8   count=2130     p = 0.598535
+x = -7   count=2030     p = 0.898828
+x = -6   count=1970     p = 0.882540
+x = -5   count=1966     p = 0.853684
+x = -4   count=1966     p = 0.834360
+x = -3   count=1930     p = 0.615724
+x = -2   count=1892     p = 0.319843
+x = -1   count=1946     p = 0.384623
+x = 1    count=1974     p = 0.669524
+x = 2    count=1889     p = 0.306705
+x = 3    count=1762     p = 0.091112
+x = 4    count=1717     p = 0.089734
+x = 5    count=1730     p = 0.153310
+x = 6    count=1706     p = 0.159722
+x = 7    count=1637     p = 0.110523
+x = 8    count=1564     p = 0.074489
+x = 9    count=1524     p = 0.067436
+PASS
+  PASS
+P=0.5600631418106701
+P=0.5985348199730628
+P=0.8988283017475144
+P=0.8825402530415043
+P=0.8536839046253725
+P=0.834360233395469
+P=0.61572354977165
+P=0.31984295993182377
+P=0.38462344495582923
+P=0.6695244257526687
+P=0.30670521105166904
+P=0.09111161462057536
+P=0.08973438833133432
+P=0.1533095695597173
+P=0.15972238420811866
+P=0.11052302765598966
+P=0.07448881810455972
+P=0.0674364139019638
+
+SUMMARY
+-------
+monobit_test                             0.9184413601731071 PASS
+frequency_within_block_test              0.8959986220294816 PASS
+runs_test                                0.845658019772205  PASS
+longest_run_ones_in_a_block_test         0.7279905400720663 PASS
+dft_test                                 0.2096228286129702 PASS
+non_overlapping_template_matching_test   1.0108133156312604 PASS
+serial_test                              0.3966810299310816 PASS
+approximate_entropy_test                 0.5417587314403518 PASS
+cumulative_sums_test                     0.5388802859334183 PASS
+random_excursion_test                    0.009973670123096995 FAIL
+random_excursion_variant_test            0.0674364139019638 PASS
+
+C:\Users\1\OneDrive\Рабочий стол\Диплом\sp800_22_tests>
